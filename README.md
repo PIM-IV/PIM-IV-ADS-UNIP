@@ -4,7 +4,7 @@
 
 ### - Tutorial para baixar o repositório e startar o sistema
 
-#### (Em criação)
+#### (Em criação) :D
 
 ### - Tarefas para o funcionamento do sistema
 - [X] Criação de uma API base em Spring Boot.
