@@ -1,9 +1,6 @@
 # PIM-IV-ADS-UNIP
 ## Este será o repositório para o nosso sistema
 
-
-### - Tutorial para baixar o repositório e startar o sistema
-
 #### (Em criação) :D
 
 ### - Tarefas para o funcionamento do sistema
@@ -12,3 +9,18 @@
 - [X] Deployar o sistema na nuvem.
 - [X] Integrar o banco de dados.
 - [ ] Integrar a API REST (para o app conversar com o sistema).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### tutorial
