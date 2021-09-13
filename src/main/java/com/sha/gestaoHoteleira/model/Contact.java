@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 
 /**  
 * @Author Vinícius
-* @see Classe 
+* @see Class
 */
 
 @AllArgsConstructor
