@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 /**  
 * @Author Vinícius
 * @see Class
+* @apiNote Modelo para as classes (que serão relacionadas às colunas do banco de dados)
 */
 
 @AllArgsConstructor
@@ -33,6 +34,5 @@ public class Contact {
 
    @Column(name = "phone")
    private String phone;
-        
-}
 
+}
