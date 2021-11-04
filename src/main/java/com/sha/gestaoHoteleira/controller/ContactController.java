@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,7 +26,7 @@ import antlr.collections.List;
 @RestController
 @RequestMapping({"/contacts"})
 public class ContactController {
-    private ContactRepository repository;
+    public ContactRepository repository;
 
     ContactController(ContactRepository contactRepository) {
         this.repository = contactRepository;
@@ -41,7 +40,7 @@ public class ContactController {
     }
 
     @GetMapping(path = {"/{id}"})
-    public ResponseEntity findById(@PathVariable long id) {
+    public ResponseEntity <?> findById(@PathVariable long id) {
         // Vincula o parâmetro passado pelo método com a variável do path (/contacts). Note que o parâmetro long id tem o mesmo nome do path declarado em @GetMapping(path = {"/{id}"})
         return repository.findById(id)
            .map(record -> ResponseEntity.ok().body(record))
@@ -53,20 +52,6 @@ public class ContactController {
         // Cria o registro na tabela e retorna o contato com o atributo id e o registro é retornado no corpo da resposta.
         // @RequestBody indica que o parâmetro contact será vinculado do corpo da requisição. Isto significa que o método espera um conteúdo em JSON.
         return repository.save(contact);
-    }
-
-    @PutMapping(value="/{id}")
-    public ResponseEntity update(@PathVariable("id") long id,
-                                      @RequestBody Contact contact) {
-        // Para atualizar um registro, é necessário informar seu ID no caminho da URL (similar ao processo de obter um registro específico).
-        return repository.findById(id)
-           .map(record -> {
-                record.setName(contact.getName());
-                record.setEmail(contact.getEmail());
-                record.setPhone(contact.getPhone());
-                Contact updated = repository.save(record);
-                return ResponseEntity.ok().body(updated);
-            }).orElse(ResponseEntity.notFound().build());
     }
 
     @DeleteMapping(path ={"/{id}"})
