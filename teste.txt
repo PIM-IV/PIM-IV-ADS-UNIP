@@ -1,2 +1,0 @@
-o git funcionou push
-o git funcionou pull
