@@ -5,7 +5,7 @@ plugins {
 	id 'java'
 }
 
-group = 'com.sha'
+group = 'com.br'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
@@ -27,12 +27,4 @@ dependencies {
 
 test {
 	useJUnitPlatform()
-}
-
-
-gradle.taskGraph.whenReady {
-  taskGraph ->
-    if (taskGraph.hasTask(stage)) {
-      test.enabled = false
-    }
 }
